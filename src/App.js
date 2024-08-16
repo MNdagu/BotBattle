@@ -13,7 +13,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://json-server-vercel-pi-olive.vercel.app/bots")
       .then((res) => res.json())
       .then((data) => {
         setBots(data);
@@ -35,7 +35,7 @@ function App() {
   };
 
   const dischargeBot = (bot) => {
-    fetch(`http://localhost:3000/bots/${bot.id}`, {
+    fetch(`https://json-server-vercel-pi-olive.vercel.app/bots/${bot.id}`, {
       method: "DELETE",
     }).then(() => {
       setBots(bots.filter((b) => b.id !== bot.id));
